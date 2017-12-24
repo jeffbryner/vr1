@@ -702,16 +702,16 @@
   ],
   "images": [
     {
-      "uri": "textures/2%20-%20Default_specularGlossiness.png"
+      "uri": "textures//2%20-%20Default_specularGlossiness.png"
     },
     {
-      "uri": "textures/2%20-%20Default_occlusion.jpg"
+      "uri": "textures//2%20-%20Default_occlusion.jpg"
     },
     {
-      "uri": "textures/ground_diffuse.jpg"
+      "uri": "textures//ground_diffuse.jpg"
     },
     {
-      "uri": "textures/ground_occlusion.jpg"
+      "uri": "textures//ground_occlusion.jpg"
     }
   ],
   "materials": [
