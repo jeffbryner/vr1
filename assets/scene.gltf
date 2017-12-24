@@ -702,10 +702,10 @@
   ],
   "images": [
     {
-      "uri": "textures//2%20-%20Default_specularGlossiness.png"
+      "uri": "textures//default_specularGlossiness.png"
     },
     {
-      "uri": "textures//2%20-%20Default_occlusion.jpg"
+      "uri": "textures//default_occlusion.jpg"
     },
     {
       "uri": "textures//ground_diffuse.jpg"
