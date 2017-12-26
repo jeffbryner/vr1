@@ -5,18 +5,30 @@
     <meta name="description" content="Hello, WebVR! - A-Frame">
     <script src="https://aframe.io/releases/0.7.0/aframe.min.js"></script>
     <script src="//cdn.rawgit.com/donmccurdy/aframe-extras/v3.12.4/dist/aframe-extras.min.js"></script>
-    <script src="https://unpkg.com/super-hands@2.1.0/dist/super-hands.min.js"></script>    
+    <script src="https://unpkg.com/super-hands@2.1.0/dist/super-hands.min.js"></script>
+    <script src="https://cdn.rawgit.com/feiss/aframe-environment-component/master/dist/aframe-environment-component.min.js"></script>
+    <script src="https://cdn.rawgit.com/donmccurdy/aframe-physics-system/v2.1.0/dist/aframe-physics-system.min.js"></script>    
   </head>
   <body>
-    <a-scene fog>
+    <a-scene physics>
         <a-assets>
             <a-asset-item id="mech" src="assets/scene.gltf"></a-asset-item>
-        </a-assets>        
-      <a-box position="-1 0.5 -3" rotation="0 45 0" color="#4CC3D9" shadow></a-box>
-      <a-cylinder position="1 0.75 -3" radius="0.5" height="1.5" color="#FFC65D" shadow></a-cylinder>
-      <a-plane position="0 0 -4" rotation="-90 0 0" width="4" height="4" color="#7BC8A4" shadow></a-plane>
-      <a-sky color="#ECECEC"></a-sky>
-      <a-entity gltf-model="#mech" position="0 0 -7" scale="0.05 0.05 0.05"></a-entity>
+        </a-assets>
+
+        <a-entity environment="preset: tron; 
+        dressingAmount: 0;
+        ground: flat;
+        fog: 0.2;
+        skyType:gradient;
+        skyColor:#091b39;
+        horizonColor:#284a9e;
+        lightPosition:-0.72 0.62 0.4;
+        grid: 1x1;                    
+        gridColor:#00ff80;"></a-entity>
+      <!-- Add a static physics plane-->
+      <a-plane position="0 -.1 -4" rotation="-90 0 0" width="40" height="40" color="#7BC8A4" static-body></a-plane>
+        
+      <a-entity gltf-model="#mech" position="0 4 -7" scale="0.05 0.05 0.05" dynamic-body="mass:15;linearDamping:.001;"></a-entity>
       <a-locomotor>
             <a-entity id="lhand" hand-controls="left" super-hands
                       sphere-collider="objects: #mech">
